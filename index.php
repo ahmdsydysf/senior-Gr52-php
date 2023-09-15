@@ -137,11 +137,3 @@ echo PHP_INT_MIN;
 </html>
 
 <?php
-// print_r
-
-// string data type
-$x = 'ahmed';
-echo $x , gettype($x);
-var_dump($x);
-
-# integer data type
