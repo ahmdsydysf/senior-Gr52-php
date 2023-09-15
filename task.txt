@@ -1,10 +1,12 @@
 search on constants types
 search on truthy and falsy values
+search on php arrays
+
 
 use def types of comment // /* */ # /** */
 use variable , gettype , var_dump , print_r
 
-def between const & variable scope inside function
+def between const & variable scope inside function => global 
 
 // string data type
 $x = 'ahmed';
