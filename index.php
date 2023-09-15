@@ -135,5 +135,3 @@ echo PHP_INT_MIN;
 
 </body>
 </html>
-
-<?php

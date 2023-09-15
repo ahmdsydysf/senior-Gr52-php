@@ -1,8 +1,12 @@
+search on constants types
+search on truthy and falsy values
+
+use def types of comment // /* */ # /** */
+use variable , gettype , var_dump , print_r
+
+def between const & variable scope inside function
 
 // string data type
 $x = 'ahmed';
 echo $x , gettype($x);
 var_dump($x);
-
-// print_r
-# integer data type
