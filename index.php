@@ -136,18 +136,18 @@
 // echo $arr[1];
 // echo $arr[2][3];
 
-$productsData = [
-0 =>  ['product1' , 2220 , '13-03-55'],
-1 =>  ['product2' , 4420 , '15-03-55'],
-2 =>  ['product3' , 820 , '9-03-55'],
-3 =>  ['product4' , 210 , '17-03-55'],
-];
-$productsData = [
-0 =>  ['name' => 'product1' , 'price' => 2220 , 'expDate' => '13-03-55'],
-1 =>  ['product2' , 4420 , '15-03-55'],
-2 =>  ['product3' , 820 , '9-03-55'],
-3 =>  ['product4' , 210 , '17-03-55'],
-];
+// $productsData = [
+// 0 =>  ['product1' , 2220 , '13-03-55'],
+// 1 =>  ['product2' , 4420 , '15-03-55'],
+// 2 =>  ['product3' , 820 , '9-03-55'],
+// 3 =>  ['product4' , 210 , '17-03-55'],
+// ];
+// $productsData = [
+// 0 =>  ['name' => 'product1' , 'price' => 2220 , 'expDate' => '13-03-55'],
+// 1 =>  ['product2' , 4420 , '15-03-55'],
+// 2 =>  ['product3' , 820 , '9-03-55'],
+// 3 =>  ['product4' , 210 , '17-03-55'],
+// ];
 
 // echo $productsData[0]['name'];
 
@@ -178,3 +178,131 @@ $productsData = [
 // // echo $a1[null];
 
 // var_dump($a1);
+
+// $arr = [null,2,3,4,'num' => 5 , 6 ];
+
+// var_dump(array_key_exists(0, $arr));
+
+// unset($arr['num']);
+// unset($arr[1]);
+// // $r = array_shift($arr);
+// // //$r = array_pop($arr);
+
+// // echo $r;
+// var_dump($arr);
+
+//-------------------
+// operators  /  *  -  +  %  **
+
+// $x = 11 ;
+// $y = 3 ;
+// var_dump($x + $y);
+// var_dump($x - $y);
+// var_dump($x * $y);
+// var_dump($x / $y);
+// var_dump($x % $y);
+// var_dump($x ** $y);
+// $x = 10 ;
+// $y = 2 ;
+// var_dump($x + $y);
+// var_dump($x - $y);
+// var_dump($x * $y);
+// var_dump($x / $y);
+// var_dump($x % $y);
+// var_dump($x ** $y);
+
+// operators precedence
+//var_dump((2 + 5 * 10) * 10 / (25 + 9));
+
+// $x = -true;
+// var_dump($x);
+
+
+//-------------------
+// Assignment Operators  =  +=  -=  *=  /* %= **=
+
+// $x = 10 ;
+// $x = $y = 10;
+// var_dump($x, $y);
+// $x = 2 * ($y = 10) + 50;
+// var_dump($x, $y);
+
+// $x = 5 ;
+
+
+// $x = $x + 10 ;
+// $x += 10 ;
+
+
+// echo $x ;
+
+// String operators   .    .=
+// $x = 'welcome ya ' . 'ahmed' ;
+// $x .= ' and my age is 20';
+// $x = $x . ' and my age is 20' ;
+
+// comparison operators  ==  ===  !=  <>  !== > < >= <=  <=>
+$x = '1000' ;
+
+var_dump(50  <=>  10);//   1
+var_dump(10  <=>  10); //  0
+var_dump(10  <=>  100); // -1
+
+
+// if(500 < $x) {
+//     echo 'true';
+// }
+
+// if($x == 10) {
+//     echo 'true';
+// }
+
+// if($x == '10') {
+//     echo 'true';
+// }
+
+// Ternary operator
+
+// if($internet_speed >= 10) {
+//     echo 'online';
+// } else {
+//     echo "offline";
+// }
+// $ping = 6 ;
+// $internet_speed = 100 ;
+
+// //echo $internet_speed >= 10 ? "<button> online </button>" : "speed is low" ;
+
+// // echo $status ;
+
+// echo $internet_speed >= 10 ? ($ping <= 5 ? 'wooooow' : 'not good') : "speed is low" ;
+
+//   ?:   ??
+
+// $path = '' ;
+
+// // $url = $path ?: '/home' ;
+
+// // echo $url;
+// $url = $path ?? '/';
+
+// echo $url ;
+
+// $x = null  ;
+
+// echo $x++ ; // pre 6
+
+// // echo $x++ ; // post 5
+
+// echo $x ;
+
+// logical operators   & and   |  or  xor
+$lap = true ;
+$book = true ;
+$age = 50 ;
+
+if($lap == true  &&  $book == true  &&  $age < 20) {
+    echo "attend";
+} else {
+    echo "absent";
+}
