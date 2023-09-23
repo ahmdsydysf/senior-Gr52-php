@@ -1,0 +1,99 @@
+try to do some practice on array
+- Ex1 try to imagine this array and see the result using print_r  ||  var_dump
+          try to echo Kansas &  Nova Scotia
+
+$countryList = [
+    'CA'        => 'Canada',
+    'US'        => 'United States']
+
+$stateList['CA'] = [
+    'AB'        => 'Alberta',
+    'BC'        => 'British Columbia',
+    'AB'        => 'Alberta',
+    'BC'        => 'British Columbia',
+    'MB'        => 'Manitoba',
+    'NB'        => 'New Brunswick',
+    'NL'        => 'Newfoundland/Labrador',
+    'NS'        => 'Nova Scotia',
+    'NT'        => 'Northwest Territories',
+    'NU'        => 'Nunavut',
+    'ON'        => 'Ontario',
+    'PE'        => 'Prince Edward Island',
+    'QC'        => 'Quebec',
+    'SK'        => 'Saskatchewan',
+    'YT'        => 'Yukon']
+
+$stateList['US'] = [
+    'AL'        => 'Alabama',
+    'AK'        => 'Alaska',
+    'AZ'        => 'Arizona',
+    'AR'        => 'Arkansas',
+    'CA'        => 'California',
+    'CO'        => 'Colorado',
+    'CT'        => 'Connecticut',
+    'DE'        => 'Delaware',
+    'DC'        => 'District of Columbia',
+    'FL'        => 'Florida',
+    'GA'        => 'Georgia',
+    'HI'        => 'Hawaii',
+    'ID'        => 'Idaho',
+    'IL'        => 'Illinois',
+    'IN'        => 'Indiana',
+    'IA'        => 'Iowa',
+    'KS'        => 'Kansas',
+    'KY'        => 'Kentucky',
+    'LA'        => 'Louisiana',
+    'ME'        => 'Maine',
+    'MD'        => 'Maryland',
+    'MA'        => 'Massachusetts',
+    'MI'        => 'Michigan',
+    'MN'        => 'Minnesota',
+    'MS'        => 'Mississippi',
+    'MO'        => 'Missouri',
+    'MT'        => 'Montana',
+    'NE'        => 'Nebraska',
+    'NV'        => 'Nevada',
+    'NH'        => 'New Hampshire',
+    'NJ'        => 'New Jersey',
+    'NM'        => 'New Mexico',
+    'NY'        => 'New York',
+    'NC'        => 'North Carolina',
+    'ND'        => 'North Dakota',
+    'OH'        => 'Ohio',
+    'OK'        => 'Oklahoma',
+    'OR'        => 'Oregon',
+    'PA'        => 'Pennsylvania',
+    'RI'        => 'Rhode Island',
+    'SC'        => 'South Carolina',
+    'SD'        => 'South Dakota',
+    'TN'        => 'Tennessee',
+    'TX'        => 'Texas',
+    'UT'        => 'Utah',
+    'VT'        => 'Vermont',
+    'VA'        => 'Virginia',
+    'WA'        => 'Washington',
+    'WV'        => 'West Virginia',
+    'WI'        => 'Wisconsin',
+    'WY'        => 'Wyoming'
+    ];
+
+
+--------------------------------------------------------------------------
+    - Ex2  try using a builtin function to get max int number system can hold and assign it to $max_int 
+      try to explain what happen in the following array
+
+$max_int = ??
+
+$arr = [];
+$arr[1] = 'last name'; 
+
+$arr[ $max_int ] = 'this is max of array '; 
+
+$arr[0] = 'first name'; 
+
+$arr[]  = 'this may be at the last of array'; 
+
+--------------------------------------------------------------------------
+
+Ex3  search and use the following array methods ( count , in_array , array_key_exists , array_keys , array_values , array_sum , end , array_rand , array_merge , array_replace , array_shift , array_unshift , array_push , array_pop , array_slice , array_splice )
+ make 1 example on each of the following array methods
