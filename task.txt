@@ -82,7 +82,7 @@ $stateList['US'] = [
     - Ex2  try using a builtin function to get max int number system can hold and assign it to $max_int 
       try to explain what happen in the following array
 
-$max_int = ??
+$max_int = 
 
 $arr = [];
 $arr[1] = 'last name'; 
