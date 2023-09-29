@@ -1,3 +1,0 @@
-1- عمل بحث عن (OSI -Layers)
-2- عمل مقارنه مابين print  و echo  ولا تقل عن 3 اختلافات
-3- تطبيق علي ال concatenate , echo , print , make variable and echo value in string

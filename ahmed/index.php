@@ -1,1 +1,0 @@
-from ahmed folder index.php
