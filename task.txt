@@ -1,0 +1,8 @@
+make index with any design 
+
+split header & footer 
+
+make Data.php with array of any Data
+
+make another page with loop on the array you make 
+
