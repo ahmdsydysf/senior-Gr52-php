@@ -1,0 +1,6 @@
+1. Write a function to calculate the factorial of a number (a non-negative integer). The function accepts the number as an argument.
+2. Write a function to reverse any inputs you give ( if you give it ahmed it return demha ).
+3. search on recursive function and make an example
+4. Write a PHP script to get the first word of a sentence
+5. Write a PHP script to generate simple random password from a given string (password will be from => '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz')
+6. Write a PHP script that displays 1 2 3 4 5 6 7 8 9 10 numbers on one line
