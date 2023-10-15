@@ -8,8 +8,10 @@
 
 var_dump($_GET);
 var_dump($_POST);
-
-
+// if($_POST) {
+//     $un = $_POST['unamer'];
+// }
+// var_dump($_POST == true)
 // $data = [
 //           'uname'  =>  'Ruby Rosario' ,
 //           'upw'   =>  'Nostrum quia aliquam' ,
@@ -17,14 +19,35 @@ var_dump($_POST);
 //           'msg'   =>  'At dolore id quia h'
 // ];
 // echo $data['msg'];
-$un = $_POST['uname'];
-$pw = $_POST['upw'];
-$em = $_POST['email'];
-$msg = $_POST['msg'];
+if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && isset($_POST['msg'])) {
+    $un = $_POST['uname'];
+    $pw = $_POST['upw'];
+    $em = $_POST['email'];
+    $msg = $_POST['msg'];
 
-echo $un , $pw , $em , $msg ;
+    // echo $un , $pw , $em , $msg ;
 
-echo $_POST['uname'] , $_POST['upw'] , $_POST['email'] ,$_POST['msg'];
+    // echo $_POST['uname'] , $_POST['upw'] , $_POST['email'] ,$_POST['msg'];
+
+    if(!empty($un)) {
+        if(strlen($un) >= 8) {
+            echo "great";
+        } else {
+            echo 'plz enter username min len = 8';
+        }
+    } else {
+        echo 'plz enter username ';
+    }
+    if(!empty($un) && strlen($un) >= 8) {
+
+        echo "great";
+
+    } else {
+        echo 'plz enter username ';
+    }
+
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +94,7 @@ echo $_POST['uname'] , $_POST['upw'] , $_POST['email'] ,$_POST['msg'];
   <option value=""></option>
   <option value=""></option>
 </select> -->
-  <button form="loginForm" >login</button>
+  <button form="loginForm" name="btn" value="login-btn" >login</button>
 </form>
 </body>
 </html>
