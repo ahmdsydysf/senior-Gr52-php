@@ -26,34 +26,37 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && i
     $msg = $_POST['msg'];
 
     $all_errors = [];
-
+    $flag = 0 ;
     // $all_errors['a'] = 'ahmed';
     // echo $un , $pw , $em , $msg ;
 
     // echo $_POST['uname'] , $_POST['upw'] , $_POST['email'] ,$_POST['msg'];
-    //   if(!empty($un)) {
-    //     if(strlen($un) >= 5) {
-    //         if(preg_match('/senior$/', $un)) {
-    //             echo "username is correct";
-    //         } else {
-    //             $all_errors['un_senior'] = 'plz use senior keyword on username ';
-    //         }
-    //     } else {
-    //         $all_errors['un_length'] = 'plz enter username min len = 5';
-    //     }
-    // } else {
-    //     $all_errors['un_empty'] = 'plz enter username ';
-    // }
-    if(empty($un)) {
+    if(!empty($un)) {
+        if(strlen($un) >= 5) {
+            if(preg_match('/senior$/', $un)) {
+                // $flag++;
+                // echo "un corrct";
+                $flag++;// 1
+
+            } else {
+                $all_errors['un_senior'] = 'plz use senior keyword on username ';
+            }
+        } else {
+            $all_errors['un_length'] = 'plz enter username min len = 5';
+        }
+    } else {
         $all_errors['un_empty'] = 'plz enter username ';
     }
-    if(strlen($un) < 5) {
-        $all_errors['un_length'] = 'plz enter username min len = 5';
-    }
+    // if(empty($un)) {
+    //     $all_errors['un_empty'] = 'plz enter username ';
+    // }
+    // if(strlen($un) < 5) {
+    //     $all_errors['un_length'] = 'plz enter username min len = 5';
+    // }
 
-    if(!preg_match('/senior$/', $un)) {
-        $all_errors['un_senior'] = 'plz use senior keyword on username ';
-    }
+    // if(!preg_match('/senior$/', $un)) {
+    //     $all_errors['un_senior'] = 'plz use senior keyword on username ';
+    // }
 
 
 
@@ -61,7 +64,7 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && i
     if(!empty($pw)) {
         if(strlen($pw) >= 8) {
             if(preg_match('@[A-Z][a-z]@', $pw)) {
-                echo "password is correct";
+                $flag++ ; //2
             } else {
                 $all_errors['pw_alpha'] = 'plz use A-Z keyword on password ';
             }
@@ -80,6 +83,9 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && i
     //     echo 'plz enter username ';
     // }
 
+    if(empty($all_errors) && $flag == 2) {
+        header('location:home.php');
+    }
 
 }
 ?>
