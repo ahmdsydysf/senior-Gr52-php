@@ -13,12 +13,12 @@
 var_dump($_GET);
 var_dump($_POST);
 
-
+var_dump($_FILES);
 
 ?>
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
 
-    <input type="text" name='un'>
+    <!-- <input type="text" name='un'>
     <input type="email" name='em'>
     <input type="number" name='nu'>
     <input type="password" name='pw'>
@@ -33,17 +33,23 @@ var_dump($_POST);
       <option value="sud">sudi</option>
     </select>
 
+    <textarea name="description" id="" cols="30" rows="10">
+      
+    </textarea>
 
     <input type="checkbox" name="course[]" value="html_co" id="">HTML
     <input type="checkbox" name="course[]" value="css_co" id="">CSS
     <input type="checkbox" checked name="course[]" value="js_co" id="">Javascript
     <input type="checkbox" name="course[]" value="php_co" id="">PHP
-<!-- 
-    <input type="radio" name="course" id="">html
-    <input type="radio" name="course" id="">css
-    <input type="radio" name="course" id="">js
-   -->
 
+     -->
+    <!-- 
+        <input type="radio" name="course" id="">html
+        <input type="radio" name="course" id="">css
+        <input type="radio" name="course" id="">js
+      -->
+
+      <input type="file" name="my_image" id="">
 
     <button>sub</button>
   </form>
