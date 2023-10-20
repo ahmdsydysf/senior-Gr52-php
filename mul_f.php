@@ -13,6 +13,7 @@
 var_dump($_GET);
 var_dump($_POST);
 var_dump($_FILES);
+//var_dump($_SERVER);
 $all_errors = [];
 $allowed_ext = ['png' , 'jpg' , 'jpeg'];
 
@@ -24,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             $fil   = $_FILES['my_images'];
 
-            $nm    = uniqid() . $fil['name'];
+            $nm    = $fil['name'];
             $tmp   = $fil['tmp_name'];
             $siz   = $fil['size'];
             $doc_root =  $_SERVER['DOCUMENT_ROOT'] . '/senior-Gr52-php/uploads/';
@@ -32,10 +33,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $expload = explode('.', $nm[$i]);
                 $end = end($expload);
                 $ext = strtolower($end);
-
+                var_dump($nm[$i]);
                 if($siz[$i] < 2097152) {
                     if(in_array($ext, $allowed_ext)) {
-                        move_uploaded_file($tmp[$i], $doc_root . 'profiles/' . $nm[$i]);
+                        move_uploaded_file($tmp[$i], $doc_root . 'profiles/' . uniqid() . $nm[$i]);
                     }
                 } else {
                     $all_errors["file_size$i"] = "plz check you file size max 2 miga not $siz[$i] on file name $nm[$i]";
@@ -61,7 +62,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 
 
+<?php if(! empty($all_errors)) : ?>
+  <?php foreach($all_errors as $error) : ?>
 
+    <div class="alert alert-info">
+      <?= $error ?>
+    </div>
+
+  <?php endforeach ?>
+<?php endif ?>
 
 
   <form method="post" enctype="multipart/form-data">

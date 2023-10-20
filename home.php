@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+var_dump($_SESSION);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,7 +83,13 @@
         <a class="link-secondary" href="#">Subscribe</a>
       </div>
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">Large</a>
+        <a class="blog-header-logo text-body-emphasis text-decoration-none" href="#">
+          <?php if(isset($_SESSION['welcom_nm'])):?>
+          <h1><?=  $_SESSION['welcom_nm'] ?></h1>
+          <?php else:?>
+            <h1>plz login first</h1>
+          <?php endif;?>
+        </a>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <form action="">
@@ -85,8 +98,11 @@
         </a>
         <input type="text" placeholder='search'>
         </form>
-      
-        <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+      <?php if(isset($_SESSION['welcom_nm'])):?>
+        <a class="btn btn-sm btn-outline-secondary" href="logout.php">logout</a>
+      <?php else:?>
+        <a class="btn btn-sm btn-outline-secondary" href="index.php">login</a>
+        <?php endif?>
       </div>
     </div>
   </header>
@@ -154,7 +170,7 @@
       </div>
     </div>
   </div>
-
+<?php if(isset($_SESSION['welcom_nm'])):?>
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
@@ -352,7 +368,7 @@
       </div>
     </div>
   </div>
-
+<?php endif ;?>
 </main>
 <form>
   <input type="text" placeholder='sea'>

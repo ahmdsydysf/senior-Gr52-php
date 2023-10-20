@@ -1,0 +1,11 @@
+1- login , register , logout , index  with full validation and error handle
+2- layout => header , footer 
+3- data  => array of fake users [name , password , email ] ---->for advanced use image fake data
+
+-- register => username , password , email  ---->for advanced upload 1 image 
+-- login email , password
+-- index => user image & username
+
+-------------------------------------------
+
+upload multi files with full validation

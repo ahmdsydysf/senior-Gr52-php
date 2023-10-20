@@ -1,31 +1,24 @@
 <?php
-require_once "database.php";
+session_start();
 
-$users_data = [
-  ['username' => 'ahmed sayed' , 'pass' => 123456],
-  ['username' => 'mohamed sayed' , 'pass' => 896523],
-  ['username' => 'islam mohamed' , 'pass' => 15975],
-  ];
+var_dump($_GET);
+var_dump($_POST);
+var_dump($_REQUEST);
+var_dump($_SESSION);
 
-$username = 'islam mohamed';
-$password = 15975;
-$flag = 0 ;
+$data = [
+  ['name' => 'ahmed' , 'pw' => 123],
+  ['name' => 'mohamed' , 'pw' => 456],
+];
 
-foreach($users_data as $user) {
-    // var_dump($user);
-    if($user['username'] == $username && $user['pass'] == $password) {
-        $flag = 1;
-        // echo "data is correct";
-        break;
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+    foreach($data as $k => $user) {
+        if($_POST['uname'] == $user['name'] && $_POST['upw'] == $user['pw']) {
+            $_SESSION['welcom_nm'] = $_POST['uname'];
+            header('location:home.php');
+        }
     }
 }
-
-// if($flag == 1) {
-//     header('location:home.php');
-// } else {
-//     header('location:404.php');
-// }
-
 
 ?>
 <!DOCTYPE html>
@@ -37,19 +30,12 @@ foreach($users_data as $user) {
 </head>
 <body>
 
-<input type="text" name='test' form="loginForm" >test
 
+  <form method="post" action="" id="loginForm"> 
 
-  <form method="get" action="" id="loginForm"> 
     <input type="text" name="uname" >username
     <input type="text" name="upw" value="">password
-    <!-- <input type="radio">male
-    <input type="radio">female -->
-    <!-- <input type="submit" value="input 2"> -->
-  
-    <!-- <button type='submit'>login</button> -->
-    <!-- <button type='button'>button</button>
-    <button type='reset'>rest</button> -->
+
   </form>
   <button form="loginForm" >login</button>
 
