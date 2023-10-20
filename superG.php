@@ -25,26 +25,60 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && i
     $em = $_POST['email'];
     $msg = $_POST['msg'];
 
+    $all_errors = [];
+
+    // $all_errors['a'] = 'ahmed';
     // echo $un , $pw , $em , $msg ;
 
     // echo $_POST['uname'] , $_POST['upw'] , $_POST['email'] ,$_POST['msg'];
+    //   if(!empty($un)) {
+    //     if(strlen($un) >= 5) {
+    //         if(preg_match('/senior$/', $un)) {
+    //             echo "username is correct";
+    //         } else {
+    //             $all_errors['un_senior'] = 'plz use senior keyword on username ';
+    //         }
+    //     } else {
+    //         $all_errors['un_length'] = 'plz enter username min len = 5';
+    //     }
+    // } else {
+    //     $all_errors['un_empty'] = 'plz enter username ';
+    // }
+    if(empty($un)) {
+        $all_errors['un_empty'] = 'plz enter username ';
+    }
+    if(strlen($un) < 5) {
+        $all_errors['un_length'] = 'plz enter username min len = 5';
+    }
 
-    if(!empty($un)) {
-        if(strlen($un) >= 8) {
-            echo "great";
+    if(!preg_match('/senior$/', $un)) {
+        $all_errors['un_senior'] = 'plz use senior keyword on username ';
+    }
+
+
+
+
+    if(!empty($pw)) {
+        if(strlen($pw) >= 8) {
+            if(preg_match('@[A-Z][a-z]@', $pw)) {
+                echo "password is correct";
+            } else {
+                $all_errors['pw_alpha'] = 'plz use A-Z keyword on password ';
+            }
         } else {
-            echo 'plz enter username min len = 8';
+            $all_errors['pw_length'] = 'plz enter password min len = 5';
         }
     } else {
-        echo 'plz enter username ';
+        $all_errors['pw_empty'] = 'plz enter password ';
     }
-    if(!empty($un) && strlen($un) >= 8) {
 
-        echo "great";
+    // if(!empty($un) && strlen($un) >= 8) {
 
-    } else {
-        echo 'plz enter username ';
-    }
+    //     echo "great";
+
+    // } else {
+    //     echo 'plz enter username ';
+    // }
 
 
 }
@@ -56,10 +90,20 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['upw']) && i
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
 </head>
 <body>
 
+<?php if(! empty($all_errors)) : ?>
+  <?php foreach($all_errors as $error) : ?>
 
+    <div class="alert alert-info">
+      <?= $error ?>
+    </div>
+
+  <?php endforeach ?>
+<?php endif ?>
 <!-- <form method="" action="" id="loginForm"> 
 <form  action="" id="loginForm">  -->
 <form method="post" action="" id="loginForm"> 
