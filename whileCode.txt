@@ -1,0 +1,8 @@
+<?php while($row = mysqli_fetch_assoc($excute)) : ?>
+  <tr>
+    <th scope="row"><?= $row['employee_id'] ?></th>
+    <td><?= $row['first_name'] ?></td>
+    <td><?= $row['last_name'] ?></td>
+    <td><?= number_format($row['salary']) ?></td>
+  </tr>
+<?php  endwhile ?>

@@ -1,0 +1,5 @@
+- backup hr_db schema into another one
+- create table users (id A_I primery , username ,email , password , type , gender)
+- create 2 pages 1- all employees ,2- all users
+- make register page tp signup new user (username , email , password , conf-password , gender) all users type (new_user) with validation and errors
+- register set data inside users table 
