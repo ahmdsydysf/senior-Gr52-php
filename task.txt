@@ -1,0 +1,2 @@
+make full crud on dashboard (users table)
+->H.. delete with warring first !!

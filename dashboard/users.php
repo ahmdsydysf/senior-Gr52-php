@@ -91,10 +91,11 @@ $all_users_query = mysqli_query($connection, $all_users);
                                                         <?= $user['password'] ?>
                                                         </td>
                                                         <td>
-                                                          <button data-flag="<?= $user['id'] ?>" class='btn btn-info'>Edit</button>
+                                                          <a href="edituser.php?myId=<?= $user['id'] ?>" class='btn btn-info'>Edit</a>
                                                           <form action="" method="post">
-                                                            <input type="hidden" name="user_id_del" value="<?= $user['id'] ?>">
-                                                          <button class='btn btn-danger'>Del</button>
+                                                          <input type="hidden" name="user_id_del" value="<?= $user['id'] ?>">
+                                                          <button  class='btn btn-danger'>Del</button>
+                                      
                                                           </form>
                                                         </td>
                                                   
