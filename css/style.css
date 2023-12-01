@@ -1,0 +1,28 @@
+body {
+  background-color: rgb(33, 32, 32);
+  color: antiquewhite;
+}
+
+h1, h3 {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.alert-warning {
+  background-color: darkmagenta;
+  color: darkorange;
+}
+
+.alert-info {
+  background-color: darkred;
+  color: darkseagreen;
+}
+
+.btn-primary {
+  font-size: xx-large;
+  background-color: darkmagenta;
+  color: darkgoldenrod;
+}
