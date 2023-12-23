@@ -5,7 +5,7 @@
 interface DbInt
 {
     public function select($tableName, $cols);
-    public function insert();
-    public function edit();
-    public function delete();
+    public function insert($table, $insertedData);
+    public function edit($table, $insertedData);
+    public function delete($table);
 }
