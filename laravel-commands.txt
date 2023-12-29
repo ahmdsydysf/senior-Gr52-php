@@ -1,5 +1,5 @@
 installation :
-1- composer create-project laravel/laravel Project-Name
+1- composer create-project laravel/laravel Project-Name 
 2- composer create-project laravel/laravel:^9.0 example-app
 3- composer global require laravel/installer
  laravel new example-app
