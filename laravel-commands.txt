@@ -1,0 +1,15 @@
+installation :
+1- composer create-project laravel/laravel Project-Name
+2- composer create-project laravel/laravel:^9.0 example-app
+3- composer global require laravel/installer
+ laravel new example-app
+4- laravel new example-app --git
+
+run :
+5- php artisan serve
+6- php artisan serve --port=8001
+7- php artisan key:generate
+8- php artisan lang:publish
+
+production :
+1- php artisan config:cache
