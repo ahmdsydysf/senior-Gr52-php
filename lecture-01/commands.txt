@@ -23,6 +23,23 @@ controllers :
 2- php artisan make:controller Test/TestController
 3- php artisan make:controller Test/NewsController
 
+routing :
+1- php artisan route:list
+2- php artisan r:l
+3- php artisan r:l --except-vendor
+
+backages:
+->telescope
+1-composer require laravel/telescope
+2-php artisan telescope:install
+3-app/providers/AppServiceProvider in boot => Schema::defaultStringLength(191);
+4- open mysql service on xampp 
+5-create laravel database on phpmyadmin
+6-php artisan migrate:fresh
+->barryvdh/laravel-debugbar
+1-composer require barryvdh/laravel-debugbar --dev
+
+
 
 production :
 1- php artisan config:cache

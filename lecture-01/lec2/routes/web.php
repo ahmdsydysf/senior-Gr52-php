@@ -39,7 +39,7 @@ Route::get('/', function () {
 });
 
 Route::get(
-    '/main/home/{name}/{id}',
+    'main/home/{name}/{id}',
     function ($name, $id) {
 
         return view('welcome', compact('name', 'id'));
@@ -47,9 +47,36 @@ Route::get(
     }
 );
 
+Route::view('welcome', 'welcome', ['name' => 'ahmed' , 'id' => 5]);
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('name/{name}', [NewsController::class , 'create'])->name('karim');
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::controller(NewsController::class)->prefix('news')->group(function () {
 
-    Route::get('all/{id}/name', 'index');
+    Route::get('all/{string}', 'index')->where('string', '.*')->name('ahmed');
 
     Route::get('add', 'create');
     Route::get('delete', 'destroy');

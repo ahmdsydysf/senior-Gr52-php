@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    public function index($id)
+    public function index($string)
     {
-
+        // dd($string);
         // $d = ['first' => 20,'second' => 10];
         // return view('news.allNews')->with($d);
         $d = ['first' => 20,'second' => 10];
@@ -17,13 +17,14 @@ class NewsController extends Controller
         $age = 20;
 
 
-        // return view('news.allNews', compact('d' , 'name' , 'age'));
+        return view('news.allNews', compact('d', 'name', 'age'));
         // return view('news.allNews', ['age' => 20 , 'd' => $d ,'name' => $name]);
-        return view('news.allNews', get_defined_vars());
+        //return view('news.allNews', get_defined_vars());
     }
 
-    public function create()
+    public function create($name)
     {
+        dd($name);
         return view('news.addNews');
     }
 
