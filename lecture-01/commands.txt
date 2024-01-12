@@ -28,6 +28,9 @@ routing :
 2- php artisan r:l
 3- php artisan r:l --except-vendor
 
+middleware :
+1- php artisan make:middleware IsYoung
+
 backages:
 ->telescope
 1-composer require laravel/telescope

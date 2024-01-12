@@ -38,6 +38,7 @@ Route::get('/', function () {
     echo 'welcome from web.php';
 });
 
+
 Route::get(
     'main/home/{name}/{id}',
     function ($name, $id) {
@@ -47,32 +48,16 @@ Route::get(
     }
 );
 
-Route::view('welcome', 'welcome', ['name' => 'ahmed' , 'id' => 5]);
+// Route::view('welcome', 'welcome', ['name' => 'ahmed' , 'id' => 5])->middleware('throttle:test');
+// Route::view('welcome', 'welcome', ['name' => 'ahmed' , 'id' => 5 , 'age' => 21])->middleware('young');
 
 
-
-
-
-
-
-
-
-
+Route::get('main/age/{age}', function ($age) {
+    return view('welcome')->with(['name' => 'ahmed' , 'id' => 20]);
+})->middleware('young');
 
 
 Route::get('name/{name}', [NewsController::class , 'create'])->name('karim');
-
-
-
-
-
-
-
-
-
-
-
-
 
 Route::controller(NewsController::class)->prefix('news')->group(function () {
 
@@ -86,4 +71,12 @@ Route::controller(NewsController::class)->prefix('news')->group(function () {
     //     'add' => 'create',
     //     'delete' => 'destroy'
     // ]);
+});
+
+Route::post('testCsrf', function () {
+    echo " success ";
+})->name('cs');
+
+Route::fallback(function () {
+    return view('errors.503');
 });
