@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\Proto\ProtoController;
 use App\Http\Controllers\Test\NewsController;
 use App\Http\Controllers\Test\TestController as TestTestController;
 use App\Http\Controllers\TestController;
@@ -36,8 +37,11 @@ Route::get('allnews', [AllController::class , 'allNews']);
 
 Route::get('/', function () {
     echo 'welcome from web.php';
-});
+})->middleware(['age' , 'auth' , 'locale:' . config('app.locale')]);
 
+
+Route::get('proto', [ProtoController::class , 'index']);
+Route::get('proto/contact-us', [ProtoController::class , 'contact'])->name('contact-us');
 
 Route::get(
     'main/home/{name}/{id}',
@@ -52,19 +56,32 @@ Route::get(
 // Route::view('welcome', 'welcome', ['name' => 'ahmed' , 'id' => 5 , 'age' => 21])->middleware('young');
 
 
+Route::get('users/user/{id}', [AllController::class , 'allUsers']);
+
+
+
 Route::get('main/age/{age}', function ($age) {
-    return view('welcome')->with(['name' => 'ahmed' , 'id' => 20]);
-})->middleware('young');
+    return view('welcome')->with(['name' => 'ahmed' , 'id' => 20 , 'myage' => $age]);
+})->middleware(['young' , 'auth']);
+
+// http://127.0.0.1:8000/all/controller?name=sayed&age=50
+// Route::get('all/{name}/controller/{age}', [AllController::class , 'index'])->name('all');
+Route::get('all/controller', [AllController::class , 'index'])->name('all');
+
+
+Route::get('user/age/{age}', function ($age) {
+    return "this is another age == $age";
+})->name('user_age');
 
 
 Route::get('name/{name}', [NewsController::class , 'create'])->name('karim');
 
-Route::controller(NewsController::class)->prefix('news')->group(function () {
+Route::middleware('young')->controller(NewsController::class)->prefix('news')->as('news.')->group(function () {
 
-    Route::get('all/{string}', 'index')->where('string', '.*')->name('ahmed');
+    Route::get('all/{string}', 'index')->where('string', '.*')->name('one');
 
-    Route::get('add', 'create');
-    Route::get('delete', 'destroy');
+    Route::get('add', 'create')->name('two')->withoutMiddleware('young');
+    Route::get('delete', 'destroy')->name('there');
 
     // Route::get([
     //     'all' => 'index',
