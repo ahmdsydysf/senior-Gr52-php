@@ -3,7 +3,9 @@
 use App\Http\Controllers\AllController;
 use App\Http\Controllers\Proto\ProtoController;
 use App\Http\Controllers\Test\NewsController;
+use App\Http\Controllers\Test\ProductsController;
 use App\Http\Controllers\Test\TestController as TestTestController;
+use App\Http\Controllers\Test\UserController;
 use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,11 +39,30 @@ Route::get('allnews', [AllController::class , 'allNews']);
 
 Route::get('/', function () {
     echo 'welcome from web.php';
-})->middleware(['age' , 'auth' , 'locale:' . config('app.locale')]);
+});
 
 
 Route::get('proto', [ProtoController::class , 'index']);
 Route::get('proto/contact-us', [ProtoController::class , 'contact'])->name('contact-us');
+
+Route::get('user/test/invo', UserController::class);
+
+
+Route::resource('ahmed', ProductsController::class)->names(['create' => 'Ahmed.make']);
+// Route::resource('ahmed', ProductsController::class)->except('show');
+// Route::resource('ahmed', ProductsController::class)->only('show');
+
+
+// Route::resources(
+//     [
+// 'product' => ProductsController::class,
+// 'user' => UserController::class
+// ],
+//     [
+//         'except' => ["product" => "index"],
+//         'names' => ["product" => ['create' => 'pp'] ]
+// ],
+// );
 
 Route::get(
     'main/home/{name}/{id}',
@@ -62,7 +83,7 @@ Route::get('users/user/{id}', [AllController::class , 'allUsers']);
 
 Route::get('main/age/{age}', function ($age) {
     return view('welcome')->with(['name' => 'ahmed' , 'id' => 20 , 'myage' => $age]);
-})->middleware(['young' , 'auth']);
+});
 
 // http://127.0.0.1:8000/all/controller?name=sayed&age=50
 // Route::get('all/{name}/controller/{age}', [AllController::class , 'index'])->name('all');

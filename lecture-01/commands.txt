@@ -22,6 +22,8 @@ controllers :
 1- php artisan make:controller TestController
 2- php artisan make:controller Test/TestController
 3- php artisan make:controller Test/NewsController
+4- php artisan make:controller Test/UserController --invokable
+5- php artisan make:controller Test/ProductsController --resource
 
 routing :
 1- php artisan route:list
@@ -31,7 +33,12 @@ routing :
 middleware :
 1- php artisan make:middleware IsYoung
 
+commands :
+1- php artisan list
+2- php artisan make:command CreateUserCommand
+
 backages:
+
 ->telescope
 1-composer require laravel/telescope
 2-php artisan telescope:install

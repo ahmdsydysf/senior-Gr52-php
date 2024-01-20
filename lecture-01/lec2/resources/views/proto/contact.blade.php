@@ -6,6 +6,15 @@
 </script>
 @endsection
 
+@section('sidebar')
+<h1> replaced </h1>
+@parent
+<br>
+<br>
+<br>
+<br>
+@endsection
+
 @section('page_content')
 <!-- main-area -->
 <main>

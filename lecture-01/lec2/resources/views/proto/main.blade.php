@@ -28,11 +28,88 @@
                 </div>
             </div>
         </div>
-        <div class="scroll__down">
-            <a href="#aboutSection" class="scroll__link">Scroll down</a>
-        </div>
-        <div class="banner__video">
-            <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i class="fas fa-play"></i></a>
+        <style>
+            .active2 {
+                background-color: darkgoldenrod
+            }
+        </style>
+        {{--
+        $users = [ahmed , karim]
+        $
+        --}}
+        @php
+        $x = true
+        @endphp
+        @isset($data)
+        <input @disabled($x==true) type="checkbox">1
+        {{-- @includeWhen(true ,'proto.main' , [] ) --}}
+        <input type="checkbox">2
+        <input type="checkbox">3
+        {{-- @foreach ($users as $user )
+        @foreach ($user->Posts as $post)
+        {{ $post }}
+        $loop->parent->name
+        @endforeach
+        @endforeach --}}
+
+
+        @foreach ($data as $name )
+
+        <h1 @class([ 'active2'=> $x ])> {{ $name }} and :: {{ $loop->parent }} </h1>
+        {{-- <h1 class=" {{ $loop->odd ? 'active2' : '' }}"> {{ $name }} and :: {{ $loop->depth }} </h1> --}}
+        {{-- <h1 class="{{ $loop->odd ? 'active2' : '' }}"> {{ $name }} and :: {{ $loop->odd }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->even }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->last }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->first }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->count }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->remaining }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->iteration }} </h1> --}}
+        {{-- <h1> {{ $name }} and :: {{ $loop->index }} </h1> --}}
+        @endforeach
+        @endisset
+        {{-- empty check on 0 , null , '' --}}
+
+        {{-- @switch()
+        @case()
+
+        @break
+        @case()
+
+        @break
+        @case()
+
+        @break
+
+        @default
+
+        @endswitch --}}
+
+        {{-- @for ($i = 0 ; $i < 10 ; $i++) @continue @break @endfor @foreach ($data as $k=> $val)
+
+            @endforeach
+
+            @empty($data)
+            <div class="scroll__down">
+                <a href="#aboutSection" class="scroll__link">{!! $data !!} </a>
+            </div>
+            @endempty --}}
+            {{-- @isset($data)
+            <div class="scroll__down">
+                <a href="#aboutSection" class="scroll__link">{!! $data !!} </a>
+            </div>
+            @endisset --}}
+
+
+            {{-- @unless ($data == 'ahmed')
+
+            <div class="scroll__down">
+                <a href="#aboutSection" class="scroll__link">{!! $data !!} </a>
+            </div>
+            @endif --}}
+
+            <div class="banner__video">
+                <a href="https://www.youtube.com/watch?v=XHOmBV4js_E" class="popup-video"><i
+                        class="fas fa-play"></i></a>
 
     </section>
     <!-- banner-area-end -->

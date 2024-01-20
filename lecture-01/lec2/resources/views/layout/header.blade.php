@@ -7,7 +7,8 @@
     <title>Rasalina - @yield('title' , 'no title')</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    {{--
+    <base href="{{ asset('/') }}"> --}}
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('webAssets/assets/img/favicon.png') }}">
     <!-- Place favicon.ico in the root directory -->
 
@@ -21,6 +22,7 @@
     <link rel="stylesheet" href="{{ asset('webAssets/assets/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('webAssets/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('webAssets/assets/css/responsive.css') }}">
+    @stack('scripts')
 </head>
 
 <body>

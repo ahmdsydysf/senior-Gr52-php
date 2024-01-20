@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 
 class ProtoController extends Controller
 {
+    public function __construct()
+    {
+        // $this->middleware('locale:ar');
+        $this->middleware('locale:ar')->except(['index']);
+        // $this->middleware('locale:ar')->only(['contact' , 'index']);
+        // $this->middleware('locale:ar')->only('contact');
+
+    }
     public function index()
     {
-        return view('proto.main');
+        $names = ['a' , 'b' , 'c' , 'd'];
+
+        return view('proto.main')->with('data', $names);
     }
     public function contact()
     {
