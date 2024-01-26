@@ -41,14 +41,18 @@ Route::get('/', function () {
     echo 'welcome from web.php';
 });
 
+Route::get('session/test', [ProductsController::class , 'destroy']);
 
 Route::get('proto', [ProtoController::class , 'index']);
 Route::get('proto/contact-us', [ProtoController::class , 'contact'])->name('contact-us');
 
 Route::get('user/test/invo', UserController::class);
+Route::get('test/se', function () {
+    return view('new');
+});
 
 
-Route::resource('ahmed', ProductsController::class)->names(['create' => 'Ahmed.make']);
+Route::resource('ahmed', ProductsController::class);
 // Route::resource('ahmed', ProductsController::class)->except('show');
 // Route::resource('ahmed', ProductsController::class)->only('show');
 

@@ -10,6 +10,38 @@
 </head>
 
 <body>
+
+    {{-- <form action="{{ route('ahmed.store') }}" method="post">
+        @csrf
+        <input type="text" name="username">
+        <br>
+        <hr>
+        <input type="text" name="email">
+        <br>
+        <hr>
+        <input type="checkbox" name="car[]" id="" value="car1">car1
+        <input type="checkbox" name="car[]" id="" value="car2">car2
+        <input type="checkbox" name="car[]" id="" value="car3">car3
+        <br>
+        <hr>
+        <input type="radio" name="gender" value="0" id="">male
+        <input type="radio" name="gender" value="1" id="">female
+        <br>
+        <hr>
+        <select name="course" id="">
+            <option value=""></option>
+            <option value="html">html</option>
+            <option value="css">css</option>
+            <option value="php">php</option>
+        </select>
+        <br>
+        <hr>
+        <input type="file" name="cv" id="">
+        <button>Submit</button>
+    </form> --}}
+
+
+
     <h1> all Data </h1>
 
     <a href="{{ url('ahmed/create') }}">go to add new Ahmed</a>

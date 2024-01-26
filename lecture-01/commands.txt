@@ -5,6 +5,12 @@ installation :
  laravel new example-app
 4- laravel new example-app --git
 
+publish :
+1- php artisan lang:publish
+
+request :
+1- php artisan make:request ProductRequest
+
 run :
 5- php artisan serve
 6- php artisan serve --port=8001
@@ -25,10 +31,28 @@ controllers :
 4- php artisan make:controller Test/UserController --invokable
 5- php artisan make:controller Test/ProductsController --resource
 
+database :
+1- php artisan migrate   => run up method
+2- php artisan migrate:status
+3- WRONG php artisan make:migration products WRONG
+4- php artisan make:migration create_categories_table
+5- WRONG php artisan make:migration profiles_table WRONG
+6- WRONG php artisan make:migration create_branches WRONG
+7- php artisan make:migration "create about us table"
+8- php artisan migrate:rollback run down in last batch
+9- php artisan migrate:refresh run down and after that run up
+10- php artisan migrate:fresh => force drop all tables and remigrate(up) 
+11- php artisan migrate:rollback --step=5
+12  php artisan migrate:rollback --batch=1
+13  php artisan migrate:reset  => invoke down only
+
 routing :
 1- php artisan route:list
 2- php artisan r:l
 3- php artisan r:l --except-vendor
+
+providers :  must add the new provider in config/app
+1- php artisan make:provider ViewServiceProvider
 
 middleware :
 1- php artisan make:middleware IsYoung
