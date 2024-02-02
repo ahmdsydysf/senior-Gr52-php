@@ -45,6 +45,19 @@ database :
 11- php artisan migrate:rollback --step=5
 12  php artisan migrate:rollback --batch=1
 13  php artisan migrate:reset  => invoke down only
+14- php artisan migrate --path=database/migrations/2024_02_02_153614_add_name_column_to_categories_table.php
+15- php artisan make:migration add_name_column_to_categories_table
+
+
+stubs:
+php artisan stub:publish
+
+seeders:
+1- php artisan make:seeder UserSeeder
+2- php artisan db:seed
+3- php artisan migrate --seed
+4- php artisan migrate:fresh --seed
+5- php artisan db:seed --class=UserSeeder
 
 routing :
 1- php artisan route:list

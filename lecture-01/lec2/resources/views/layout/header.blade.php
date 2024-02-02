@@ -40,7 +40,7 @@
     <!-- Scroll-top-end-->
 
     <!-- header-area -->
-    <header>
+    {{-- <header>
         <div id="sticky-header" class="menu__area transparent-header">
             <div class="container custom-container">
                 <div class="row">
@@ -109,5 +109,5 @@
                 </div>
             </div>
         </div>
-    </header>
+    </header> --}}
     <!-- header-area-end -->

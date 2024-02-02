@@ -1,13 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllController;
-use App\Http\Controllers\Proto\ProtoController;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Test\NewsController;
+use App\Http\Controllers\Proto\ProtoController;
 use App\Http\Controllers\Test\ProductsController;
 use App\Http\Controllers\Test\TestController as TestTestController;
-use App\Http\Controllers\Test\UserController;
-use App\Http\Controllers\TestController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +46,7 @@ Route::get('session/test', [ProductsController::class , 'destroy']);
 Route::get('proto', [ProtoController::class , 'index']);
 Route::get('proto/contact-us', [ProtoController::class , 'contact'])->name('contact-us');
 
-Route::get('user/test/invo', UserController::class);
+// Route::get('user/test/invo', UserController::class);
 Route::get('test/se', function () {
     return view('new');
 });
@@ -122,3 +122,7 @@ Route::post('testCsrf', function () {
 Route::fallback(function () {
     return view('errors.503');
 });
+
+
+
+Route::resource('users', UserController::class);
