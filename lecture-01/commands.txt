@@ -48,6 +48,14 @@ database :
 14- php artisan migrate --path=database/migrations/2024_02_02_153614_add_name_column_to_categories_table.php
 15- php artisan make:migration add_name_column_to_categories_table
 
+models :
+1- php artisan make:model ModelName
+2- php artisan make:model Branch -m
+3- php artisan make:model Branch --migration
+4- php artisan make:model Branch -mcsfRr [m->migration,c->controller,s->seeder,f->factory,R->request(create,update),r->resource]
+5- php artisan make:model Branch --all
+
+
 
 stubs:
 php artisan stub:publish
@@ -90,3 +98,8 @@ backages:
 
 production :
 1- php artisan config:cache
+
+
+packages:
+sweetalert : https://realrashid.github.io/sweet-alert/install
+php artisan vendor:publish --provider="RealRashid\SweetAlert\SweetAlertServiceProvider"

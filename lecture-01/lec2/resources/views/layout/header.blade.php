@@ -40,7 +40,9 @@
     <!-- Scroll-top-end-->
 
     <!-- header-area -->
-    {{-- <header>
+    <header>
+        @include('sweetalert::alert')
+
         <div id="sticky-header" class="menu__area transparent-header">
             <div class="container custom-container">
                 <div class="row">
@@ -109,5 +111,8 @@
                 </div>
             </div>
         </div>
-    </header> --}}
-    <!-- header-area-end -->
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="" style="margin-top: 400px !important">
+                <!-- header-area-end -->

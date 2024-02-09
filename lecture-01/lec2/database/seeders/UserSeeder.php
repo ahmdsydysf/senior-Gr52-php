@@ -23,5 +23,15 @@ class UserSeeder extends Seeder
             'email' => 'super@web.com',
             'password' => 'Super123'
         ]);
+        DB::table('users')->insert([
+            'name' => 'omar',
+            'email' => 'superomar@web.com',
+            'password' => 'Super123'
+        ]);
+        DB::table('users')->insert([
+            'name' => 'karim',
+            'email' => 'superkarim@web.com',
+            'password' => 'Super123'
+        ]);
     }
 }

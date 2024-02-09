@@ -24,5 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         View::composer('welcome', ViewComposer::class);
+
+        // Route::model('profile', Profile::class);
     }
 }

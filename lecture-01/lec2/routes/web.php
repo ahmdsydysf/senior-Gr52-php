@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Test\NewsController;
@@ -125,4 +126,7 @@ Route::fallback(function () {
 
 
 
-Route::resource('users', UserController::class);
+Route::resources([
+    'users' => UserController::class,
+    'profile' => ProfileController::class
+]);
