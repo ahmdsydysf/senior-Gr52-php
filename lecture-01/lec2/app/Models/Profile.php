@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Profile extends Model
 {
     use HasFactory;
-
     protected $fillable =
     ['last_name','age','mobile' , 'first_name','address','gender'];
     // protected $guarded = [];
@@ -22,7 +21,10 @@ class Profile extends Model
     // public const CREATED_AT = 'maked_at';
     // public const UPDATED_AT = 'edited_at';
 
-    protected $hidden = [
-        'age',
-    ];
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+
+        // belongsTo()  in model which contain forignID
+    }
 }

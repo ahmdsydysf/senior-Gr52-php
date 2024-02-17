@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AllController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\UserController;
@@ -128,5 +130,7 @@ Route::fallback(function () {
 
 Route::resources([
     'users' => UserController::class,
-    'profile' => ProfileController::class
+    'profile' => ProfileController::class,
+    'products' => ProductController::class,
+    'categories' => CategoryController::class,
 ]);

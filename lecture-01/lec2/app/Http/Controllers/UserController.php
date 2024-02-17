@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,13 +35,16 @@ class UserController extends Controller
         // foreach($data as $k => $user) {
         //     dump($user);
         // }
-        DB::table('users')->insertOrIgnore([
-            'email' => 'kayla@example.com',
-            'name' => 'mahmoud',
-            'password' => 'mahmoud'
-        ]);
+        // DB::table('users')->insertOrIgnore([
+        //     'email' => 'kayla@example.com',
+        //     'name' => 'mahmoud',
+        //     'password' => 'mahmoud'
+        // ]);
 
-        $data = DB::table('users')->get()->dd();
+        // $data = DB::table('users')->get()->dd();
+        $data = Profile::with(['user'])->get();
+        $data = Profile::all();
+
         return view('users.allUsers', compact('data'));
         // dd($data);
     }
@@ -71,10 +76,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        
-    }
+    public function edit(string $id) {}
 
     /**
      * Update the specified resource in storage.

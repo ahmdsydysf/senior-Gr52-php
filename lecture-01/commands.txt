@@ -54,8 +54,10 @@ models :
 3- php artisan make:model Branch --migration
 4- php artisan make:model Branch -mcsfRr [m->migration,c->controller,s->seeder,f->factory,R->request(create,update),r->resource]
 5- php artisan make:model Branch --all
+6- php artisan make:model Task -msf
 
-
+factory :
+1- php artisan make:factory FactoryName
 
 stubs:
 php artisan stub:publish

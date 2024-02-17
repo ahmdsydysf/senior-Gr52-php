@@ -2,25 +2,24 @@
 
 @section('page_content')
 
+<a href="{{ route('products.create') }}">add new</a>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">first name</th>
-            <th scope="col">email</th>
-            <th scope="col">gender</th>
-            <th scope="col">address</th>
+            <th scope="col">product name</th>
+            <th scope="col">product Price</th>
+            <th scope="col">Category</th>
             <th scope="col">Handle</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ( $data as $profile )
+        @foreach ( $data as $product )
         <tr>
-            <th scope="row">{{ $profile->user->id }}</th>
-            <td>{{ $profile->first_name }}</td>
-            <td>{{ $profile->user->email }}</td>
-            <td>{{ $profile->gender }}</td>
-            <td>{{ $profile->address }}</td>
+            <th scope="row">{{ $product->id }}</th>
+            <td>{{ $product->name }}</td>
+            <td>{{ $product->price }}</td>
+            <td>{{ $product->category->name }}</td>
             <td>@mdo</td>
         </tr>
         @endforeach

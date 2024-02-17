@@ -2,25 +2,30 @@
 
 @section('page_content')
 
+<a href="{{ route('categories.create') }}">add new</a>
 <table class="table">
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">first name</th>
-            <th scope="col">email</th>
-            <th scope="col">gender</th>
-            <th scope="col">address</th>
+            <th scope="col">category name</th>
+            <th scope="col">category parent</th>
+            <th scope="col">products</th>
             <th scope="col">Handle</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ( $data as $profile )
+        @foreach ( $data as $category )
         <tr>
-            <th scope="row">{{ $profile->user->id }}</th>
-            <td>{{ $profile->first_name }}</td>
-            <td>{{ $profile->user->email }}</td>
-            <td>{{ $profile->gender }}</td>
-            <td>{{ $profile->address }}</td>
+            <th scope="row">{{ $category->id }}</th>
+            <td>{{ $category->name }}</td>
+            <td>{{ $category->parent->name  }}</td>
+            <td>
+                <select>
+                    @foreach ($category->products as $product )
+                        <option>{{ $product->name }}</option>
+                    @endforeach
+                </select>
+            </td>
             <td>@mdo</td>
         </tr>
         @endforeach

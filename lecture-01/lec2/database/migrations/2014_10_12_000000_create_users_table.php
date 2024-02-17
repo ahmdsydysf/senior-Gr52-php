@@ -23,12 +23,12 @@ return new class () extends Migration {
             // $table->enum('status', ['active' , 'notActive'])->comment('active mean = 0 & not active mean = 1');
             // $table->string('image')->default('default.png');
 
-            // $table->timestamps();
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->default('Password123')->nullable();
+            $table->timestamps();
             $table->rememberToken();
         });
     }
