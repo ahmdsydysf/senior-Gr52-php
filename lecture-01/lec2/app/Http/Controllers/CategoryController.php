@@ -12,7 +12,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data = Category::with(['parent','children','products'])->get();
+        $data = Category::with(['parent','children', 'products'])->get();
 
         return view('category.all', compact('data'));
 
@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // $category->load('products')
     }
 
     /**

@@ -14,16 +14,12 @@ class ProductController extends Controller
      */
     public function index()
     {
-        // $data = Product::with('category')->get();
+        $data = Product::with('category')->get();
 
-        // return view('products.all', compact('data'));
+        return view('products.all', compact('data'));
 
-        $data = User::find(7);
-        foreach($data->products as $product) {
+        // $data = User::find(7);
 
-            dump($product->category->parent);
-        }
-        dump($data->products);
     }
 
     /**
@@ -46,7 +42,9 @@ class ProductController extends Controller
 
         Product::create($request->all());
 
-        return redirect()->route('products.index');
+        return redirect('products')
+
+            ->with('success', 'product added successfully');
 
     }
 

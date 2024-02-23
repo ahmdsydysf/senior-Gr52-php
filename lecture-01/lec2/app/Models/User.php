@@ -64,4 +64,22 @@ class User extends Authenticatable
         );
     }
 
+    public function car()
+    {
+        return $this->belongsTo(Car::class, 'car_id', 'id');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }
