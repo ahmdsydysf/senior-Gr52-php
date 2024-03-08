@@ -77,7 +77,7 @@
                                     </ul>
                                 </div>
                                 <div class="header__btn d-none d-md-block">
-                                    <a href="{{ route('contact-us') }}" class="btn">Contact me</a>
+                                    <a href="" class="btn">Contact me</a>
                                 </div>
                             </nav>
                         </div>

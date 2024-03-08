@@ -24,6 +24,21 @@ maintenance mode :
 4- php artisan down --secret="123omar" 
 5- php artisan down --render="folder.folder.file" 
 
+file-Make-shortcut-for-public-disk
+1- php artisan storage:link
+
+pagination-main-folder-includes
+1- php artisan vendor:publish --tag=laravel-pagination
+
+component :
+1- php artisan make:component AlertMe
+2- php artisan make:component TableData --inline
+
+clear :
+php artisan view:clear
+php artisan cache:clear
+php artisan route:clear
+
 controllers :
 1- php artisan make:controller TestController
 2- php artisan make:controller Test/TestController

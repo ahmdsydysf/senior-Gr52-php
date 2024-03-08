@@ -1,9 +1,7 @@
-@extends('layout.app')
+<x-main.app >
 
-@section('page_content')
 
-<a href="{{ route('products.create') }}">add new</a>
-
+<x-btns.formBTN to="{{ route('products.create') }}" clr='info' word='add new' />
 
 <table class="table">
     <thead>
@@ -40,9 +38,19 @@
     </tbody>
 </table>
 
-<x-includes.alert clr='danger' message="new msg from x-compo"  />
-<x-includes.alert clr='success' message="new msg from x-compo2"  />
+<x-alert-me clr='danger' message="new msg from x-compo Class"  />
+<x-alert-me  />
 
-{{-- <x-includes.alert> </x-includes.alert> --}}
 
-@endsection
+
+{{-- <x-includes.alert clr='success' message="new msg from x-compo2"  />
+
+
+
+
+<x-includes.alert clr='info' message="new msg from x-compo open close" >
+
+    <p>slot Lorem, ipsum dolor.</p>
+</x-includes.alert> --}}
+
+</x-main.app>

@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\FileManager;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::defaultView('vendor.pagination.bootstrap-5');
+        // Paginator::useBootstrapFive();
+        Route::model('filemanager', FileManager::class);
     }
 }
