@@ -4,6 +4,7 @@ use App\Http\Controllers\AccessorController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompoController;
 use App\Http\Controllers\FileManagerController;
+use App\Http\Controllers\MailSendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\FileManagerController;
 */
 
 
+Route::get('sendmail', [MailSendController::class , 'index']);
 Route::get('accessor/{id}', [AccessorController::class , 'index']);
 Route::get('test/compo', CompoController::class);
 Route::resource('filemanager', FileManagerController::class);

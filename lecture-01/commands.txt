@@ -30,6 +30,9 @@ file-Make-shortcut-for-public-disk
 pagination-main-folder-includes
 1- php artisan vendor:publish --tag=laravel-pagination
 
+MakeMailler:
+1- php artisan make:mail MailName
+
 component :
 1- php artisan make:component AlertMe
 2- php artisan make:component TableData --inline
